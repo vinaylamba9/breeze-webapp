@@ -1,0 +1,121 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Breeze",
+    "description": "Breeze Application APIs",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:5000",
+  "basePath": "/api/",
+  "paths": {
+    "/user/post/signup": {
+      "post": {
+        "tags": ["User Onboarding"],
+        "responses": {
+          "200": {
+            "description": "User has been created.",
+            "schema": {
+              "$ref": "#/definitions/userModel"
+            }
+          },
+          "404": {
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Create a user account"
+      }
+    },
+    "/user/post/login": {
+      "post": {
+        "tags": ["User Onboarding"],
+        "responses": {
+          "200": {
+            "description": "User has been logged in.",
+            "schema": {
+              "$ref": "#/definitions/userModel"
+            }
+          },
+          "404": {
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "User has been logged in"
+      }
+    },
+    "/user/post/verifyotp": {
+      "post": {
+        "tags": ["User Onboarding"],
+
+        "responses": {
+          "200": {
+            "description": "OTP has been verified."
+          }
+        },
+        "summary": "OTP verification"
+      }
+    },
+    "/user/post/forgotpassword": {
+      "post": {
+        "tags": ["User Onboarding"],
+
+        "responses": {
+          "200": {
+            "description": "Forgot Password API."
+          }
+        },
+        "summary": ""
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "User Onboarding",
+      "description": "API for users in the system"
+    }
+  ],
+  "definitions": {
+    "userModel": {
+      "required": ["name", "email", "password"],
+      "properties": {
+        "_id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string",
+          "uniqueItems": false
+        },
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string"
+        },
+        "profileImage": {
+          "type": "string"
+        },
+        "isVerified": {
+          "type": "boolean"
+        },
+        "accountInItFrom": {
+          "type": "number"
+        },
+        "accountStatus": {
+          "type": "number"
+        },
+        "otp": {
+          "type": "string"
+        },
+        "otpValidTill": { "type": "string" }
+      }
+    }
+  },
+  "schemes": ["http", "https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"]
+}

@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--primary-colorWithOpacity: #f1f5fa;
+	--secondary-color: #757d85;
+	--warning-color: #ff9500;
+	--danger-color: #fc3c3c;
+	--danger-colorWithOpacity: #fdf2f3;
+	--info-color: #0b63a2;
+	--muted-color: #f8f7f7;
+	--success-color: #28a745;
+	--admin-color: #afdaad;
+	--text-color-purity: #fff;
+	--straw-color: #ffcfcf;
+	--text-color-dark: #000;
+	--background-color-light: #fff;
+	--background-color-dark: #000;
+	--background-color-ebony: #5c5b5b;
+	--background-color-metal: #969696;
+	--background-color-jade: #313131;
+	--background-color-raven: #050301;
+	--background-color-leather: #0b0705;
+	--background-color-pulp: #f7edc9;
+	--color-darkTeal: #005459;
+	--color-notified: #f1a984;
+	--color-poppedUp: #cee4e2;
+	--color-soil: #b06217;
+	--color-slate: #f2f2f2;
+	--color-tanz: #db8f6d;
+	--color-TealWithOpacity: #f5fcf9;
+	--color-greenishTeal: #cbfae5;
+	--color-lightTeal: #e6ff85;
+	--color-champagne: #ffe2b4;
+	--color-parrot: #23d564;
+	--color-sky: #12b5ff;
+	--color-cyan: #5da7af;
+	--color-purple: #3138c4;
+	--color-pearl: #dde8ff;
+	--fontsize-strong: 40px;
+	--fontsize-tough: 32px;
+	--fontsize-pearl: 28px;
+	--fontsize-trim: 24px;
+	--fontsize-glossy: 20px;
+	--fontsize-virgin: 18px;
+	--fontsize-brittle: 16px;
+	--fontSize-pool: 14px;
+	--fontsize-smart: 12px;
+	--fontsize-small: 10px;
+}
+
+* {
+	/* overflow: hidden; */
+	/* word-wrap: break-word; */
+	user-select: none;
+}
+::-webkit-scrollbar {
+	display: none;
+	width: 5px;
+} /*
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+} */
+body {
+	margin: 0;
+	padding: 0;
+	/* font-family: "Ubuntu", sans-serif; */
+	font-family: "Plus Jakarta Sans", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+::-webkit-file-upload-button {
+	border-radius: 2rem;
+	outline: none;
+	border: none;
+	padding: 2.5% 6%;
+	color: var(--color-darkTeal);
+	font-weight: 600;
+	background-color: var(--color-champagne);
+}
+
+input[type="file"] {
+	display: none;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.stepper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.step.completed {
+	background-color: #48bb78;
+	color: #ffffff;
+}
+
+.step {
+	font-size: 1rem;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	background-color: #f2f2f2;
+	border-radius: 9999px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.step.active {
+	background-color: #48bb78;
+	color: #ffffff;
+	animation: pulse-fast 0.5s alternate infinite;
+}
+.line {
+	height: 1px;
+	border-radius: 2rem;
+	background-color: #ccc;
+	margin: 0 0.5rem;
+	flex: 1;
+}
+
+.line.active {
+	background-color: #48bb78;
+	color: #ffffff;
+	animation: pulse-fast 0.5s alternate infinite;
+}
+
+[contenteditable] {
+	outline: 0px solid transparent;
+}
+
+[contentEditable][placeholder]:empty:before {
+	content: attr(placeholder) !important;
+	background-color: transparent;
+	color: var(--background-color-metal);
+}
+
+.EmojiPickerReact.epr-main {
+	border-radius: 0px !important;
+	border-color: transparent;
+	border-left: none !important;
+	border-bottom: none !important;
+	border-right: none !important;
+	/* border: none !important; */
+}

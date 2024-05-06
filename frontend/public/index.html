@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Breeze is a chat app" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta name="Breeze" content="Breeze" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="https://res.cloudinary.com/dtjqyp0r2/image/upload/v1695488831/Group_4_d9lhto.png" />
+		<link
+			rel="apple-touch-icon"
+			href="https://res.cloudinary.com/dtjqyp0r2/image/upload/v1695488831/Group_4_d9lhto.png" />
+		<!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+
+		<!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500&display=swap"
+			rel="stylesheet" />
+		<title>Breeze</title>
+		<link rel="manifest" href="/manifest.json" />
+	</head>
+
+	<body>
+		<div id="app"></div>
+
+		<script type="text/javascript">
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", () => {
+					navigator.serviceWorker
+						.register(`./serviceworker.js`)
+						.then((registration) => {
+							console.log(
+								"Service Worker registered with scope:",
+								registration.scope
+							);
+						})
+						.catch((error) => {
+							console.error("Service Worker registration failed:", error);
+						});
+				});
+			} else {
+				console.log("Service workers are not supported in this browser.");
+			}
+		</script>
+	</body>
+</html>
